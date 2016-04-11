@@ -1,0 +1,9 @@
+MNIST folder contains MNIST database from http://yann.lecun.com/exdb/mnist/
+	It is a database of many 28x28 handwritten digits and corresponding digits
+	The images are all embedded into a single file
+
+readdata.m reads above MNIST database to a cell array of two dimensional image
+	Usage: [trainimage,traindata,testimage,testdata] = readdata(imagesreqd)
+	trainimage{1} will have first image (transposed) - Notice {} instead of ()
+	traindata(1) will have digit corresponding to trainimage{1}
+	Similarly test image and data
