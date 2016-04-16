@@ -1,0 +1,9 @@
+Pending
+-- 16x2 display last 4 digit in both row not able to access
+-- 16x2 display initialize to null on startup
+-- Proper API definition for 16x2 display
+
+-- Nokia LCD display change yellow colour to something else
+-- Pin interrupt to invert display
+
+-- Why NOKIA display not reset when power is off and kept on
