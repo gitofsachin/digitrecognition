@@ -87,13 +87,20 @@ void digitlcdinit()
 void startdigitlcd(void)
 {
 	digitlcdinit();
-	int i;
 	digitlcdcommand(0x84);
-		for(i=0;i<5;i++)
-			digitlcddata(string1[i]);
+		digitlcddata('D');
+		digitlcddata('I');
+		digitlcddata('G');
+		digitlcddata('I');
+		digitlcddata('T');
 	digitlcdcommand(0xC6);
-		digitlcddata('0');
-	digitlcdcommand(0xCC);
-		digitlcddata('0');
+		digitlcddata(' ');
+	digitlcdcommand(0xCF);
+		digitlcddata(' ');
 }
 
+void digitlcddisp(char ch)
+{
+	digitlcdcommand(0xC6);
+	digitlcddata(ch);
+}

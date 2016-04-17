@@ -1,0 +1,7 @@
+Initial setting
+-L$(HOME)/tivaware/driverlib/gcc -L/home/sachin/Eclipse/workspace/librarycreation/Debug -Wl,-Map=Blinky.map,--static,--gc-sections,-T../ldStart.ld -mthumb -mcpu=cortex-m4
+
+Linker flag setting to get above
+-Wl,-Map=Blinky.map,--static,--gc-sections,-T../ldStart.ld -mthumb -mcpu=cortex-m4
+
+Expert settings

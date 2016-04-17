@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -ldriver -llibrarycreation
+LIBS := -ldriver -llibrarycreation -lm
 

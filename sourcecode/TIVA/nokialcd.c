@@ -331,7 +331,7 @@ void LCDWriteBmp3x(char*image,int x,int y)//Column major
 		row=rowd;
 		col=(84-1)-cold;
 		k=((int)(col/3))*28+(row/3);
-		if(mode==0)
+		if(mode==1)
 		{
 			data1=255-image[j];
 			data2=255-image[k];
