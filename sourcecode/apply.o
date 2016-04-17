@@ -29,30 +29,11 @@
     
     [hiddenWeights, outputWeights, error] = trainStochasticSquaredErrorTwoLayerPerceptron(activationFunction, dActivationFunction, numberOfHiddenUnits, inputValues, targetValues, epochs, batchSize, learningRate);
     
-    fwrite1=fopen("hiddenweights1","w");
-    fwrite2=fopen("outputweights1","w");
-
-for i=1:numberOfHiddenUnits
-fwrite(fwrite1,"{");
-for j=1:784
-fwrite(fwrite1,num2str(hiddenWeights(i,j)));
-if (j~=784)
-fwrite(fwrite1,",");
-end;
-end;
-fwrite(fwrite1,"},\n");
-end;
-
-for i=1:10
-fwrite(fwrite2,"{");
-for j=1:numberOfHiddenUnits
-fwrite(fwrite2,num2str(outputWeights(i,j)));
-if (j~=numberOfHiddenUnits)
-fwrite(fwrite2,",");
-end;
-end;
-fwrite(fwrite2,"},\n");
-end;
+    fwrite1=fopen("hiddenweights","w");
+    fwrite2=fopen("outputweights","w");
+	
+    fwrite(fwrite1,hiddenWeights','double');
+    fwrite(fwrite2,outputWeights','double');
 
     fclose(fwrite1);
     fclose(fwrite2);
@@ -66,10 +47,7 @@ end;
     imshow(myim)
     labels(101)
 
-    fwrite1=fopen("inputvalues1","w");
-      for j=1:784
-        fwrite(fwrite1,num2str(inputVector(j)));
-	fwrite(fwrite1,",");
-      end;
+    fwrite1=fopen("inputvalues","w");
+    fwrite(fwrite1,inputVector','double');
     fclose(fwrite1);
 

@@ -1,0 +1,9 @@
+apply.o - Training file - writes weights and inputvalues to a file for predict.c to read
+training.o - Training file - writes weights and input values to a file which is to be copied to predict_tiva.c
+predict.c - prediction code for PC
+predict_tiva.c - prediction code for tiva (inputvalues are hardcoded)
+
+compilation command used:(workspace/Blinky/Debug folder)
+arm-none-eabi-gcc -L/home/sajna/tivaware/driverlib/gcc -L/home/sajna/workspace/mylibrary/Debug -Wl,--static,--gc-sections,-Map=mymap.map,-T../ldStart.ld -mthumb -mcpu=cortex-m4 -o "Blinky.elf"  ./main.o ./mylib.o ./startup_gcc.o   -ldriver -lmylibrary -lm
+
+
