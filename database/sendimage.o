@@ -1,0 +1,21 @@
+clear all;
+close all;
+
+pkg load instrument-control
+s1 = serial("/dev/ttyACM0", 115200);
+set(s1, "baudrate", 115200);
+set(s1, "bytesize", 8)
+set(s1, "parity", "N")
+set(s1, "stopbits", 1)
+
+[a b c d]=readMNIST(20);
+for p=11:1:20
+	x=a{p};
+	srl_write(s1,'s');
+	for i=1:size(x,1)
+		for j=1:size(x,2)
+			srl_write(s1,x(i,j));
+		end
+	end
+	k=input('Sent');
+end

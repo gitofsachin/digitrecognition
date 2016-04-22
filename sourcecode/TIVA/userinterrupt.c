@@ -4,6 +4,8 @@
 const int sizex=28;
 const int sizey=28;
 
+extern int startpredict;
+
 void initdeselogo()
 {
 	deselogo[0]=0xff;
@@ -721,6 +723,7 @@ void UARTIntHandler(void)
 						command=0;
 						n=0;
 						LCDWriteBmp3x(image,22,10);
+						startpredict=1;
 					}
 					break;
 

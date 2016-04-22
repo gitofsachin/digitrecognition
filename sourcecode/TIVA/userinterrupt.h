@@ -22,5 +22,5 @@ void myinit();
 void displaymasterinit();
 
 extern int startpredict;
-char image[1024];
+extern char image[1024];
 extern char deselogo[600];
