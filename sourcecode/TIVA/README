@@ -1,9 +1,5 @@
-Pending
--- 16x2 display last 4 digit in both row not able to access
--- 16x2 display initialize to null on startup
--- Proper API definition for 16x2 display
+Blinky.elf creation in command line
 
--- Nokia LCD display change yellow colour to something else
--- Pin interrupt to invert display
+arm-none-eabi-gcc -L/home/sachin/tivaware/driverlib/gcc -Wl,--static,--gc-sections,-Map=Blinky.map,-T../ldStart.ld -mthumb -mcpu=cortex-m4 -o "Blinky.elf"  ./main.o ./nokialcd.o ./mylcd.o ./userinterrupt.o ./startup_gcc.o   -ldriver -lm
 
--- Why NOKIA display not reset when power is off and kept on
+arm-none-eabi-gcc -L/home/sajna/tivaware/driverlib/gcc -Wl,--static,--gc-sections,-Map=mymap.map,-T../ldStart.ld -mthumb -mcpu=cortex-m4 -o "Blinky.elf"  ./main.o ./nokialcd.o ./mylcd.o ./userinterrupt.o ./startup_gcc.o   -ldriver -lm

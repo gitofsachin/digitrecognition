@@ -1,0 +1,52 @@
+pkg load image;
+
+arglist=argv();
+imageno=str2num(arglist{1});
+
+% Load validation set.
+	inputValues = loadMNISTImages('../../database/MNIST/t10k-images.idx3-ubyte');
+	labels = loadMNISTLabels('../../database/MNIST/t10k-labels.idx1-ubyte');
+
+if(imageno>0)
+	inputVector = inputValues(:, imageno);
+	labels(imageno)
+else
+	inputVector = imread("sample.jpg");
+	inputVector = imresize(inputVector,[20 20]);
+	rsum=0;
+	csum=0;
+	for i=1:1:20
+		for j=1:1:20
+			rsum+=i*double(inputVector(i,j));
+			csum+=j*double(inputVector(i,j));
+		end
+	end
+	rsum=double(rsum/sum(sum(inputVector)));
+	csum=double(csum/sum(sum(inputVector)));
+
+	if(mean(mean(inputVector))>128)
+		inputVector=255-inputVector;
+	end
+
+	rsum=round(rsum);
+	csum=round(csum);
+	temp=zeros(28,28);
+	xstart=5+10-rsum;
+	ystart=5+10-csum;
+	temp(xstart:xstart+20-1,ystart:ystart+20-1)=inputVector;
+	inputVector=temp;
+	h=[1 0; 0 0];
+	%h=h/4;
+	inputVector=imfilter(inputVector,h);
+
+	inputVector = reshape(inputVector,784,1);
+	inputVector = double(inputVector)/255;
+end
+
+myim=reshape(inputVector,28,28);
+imshow(myim);
+pause
+
+fwrite1=fopen("inputvalues","w");
+fwrite(fwrite1,inputVector','double');
+fclose(fwrite1);

@@ -133,7 +133,7 @@ void InitLcd(int n)
     	mode=1;
     	WHITE= 0xFFF;
 		BLACK= 0x000;
-		RED= 0x0FF;
+		RED= 0x00F;
 		GREEN= 0x0F0;
 		BLUE= 0xF00;
 		CYAN= 0xFF0;

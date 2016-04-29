@@ -1,0 +1,4 @@
+apply.o - Training file - writes weights to a file for predict.c to read
+training.o - Training file - writes weights to a file which is to be copied to main.c for TIVA
+predict.c - prediction code for PC
+loadvalidation.o - Load data input for predict.c from sample.jpg or MNIST

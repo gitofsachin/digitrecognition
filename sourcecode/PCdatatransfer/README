@@ -1,0 +1,4 @@
+Compile main.c to main.out
+Draw the digit in sample.jpg
+Run ./main.out
+Enter 1 for sample.jpg and any other key for MNIST image

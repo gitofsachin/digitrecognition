@@ -78,7 +78,7 @@ void digitlcdinit()
 	digitlcdcommand(0x38);
 	digitlcdcommand(0x38);
 	digitlcdcommand(0x38);
-	digitlcdcommand(0x0E);
+	digitlcdcommand(0x0C);
 	digitlcdcommand(0x06);
 	digitlcdcommand(0x01);
 	GPIOPinWrite(GPIO_PORTA_BASE,GPIO_PIN_5,0x00);
@@ -87,20 +87,39 @@ void digitlcdinit()
 void startdigitlcd(void)
 {
 	digitlcdinit();
-	digitlcdcommand(0x84);
+	digitlcdcommand(0x85);
 		digitlcddata('D');
 		digitlcddata('I');
 		digitlcddata('G');
 		digitlcddata('I');
 		digitlcddata('T');
-	digitlcdcommand(0xC6);
-		digitlcddata(' ');
-	digitlcdcommand(0xCF);
-		digitlcddata(' ');
+	digitlcdcommand(0x80);
+		digitlcddata(255);
+		digitlcddata(255);
+		digitlcddata(255);
+		digitlcddata(255);
+
+	digitlcdcommand(0x8C);
+			digitlcddata(255);
+			digitlcddata(255);
+			digitlcddata(255);
+			digitlcddata(255);
+
+	digitlcdcommand(0xC0);
+		digitlcddata(255);
+		digitlcddata(255);
+		digitlcddata(255);
+		digitlcddata(255);
+
+	digitlcdcommand(0xCC);
+			digitlcddata(255);
+			digitlcddata(255);
+			digitlcddata(255);
+			digitlcddata(255);
 }
 
 void digitlcddisp(char ch)
 {
-	digitlcdcommand(0xC6);
+	digitlcdcommand(0xC7);
 	digitlcddata(ch);
 }

@@ -6,7 +6,7 @@ void (*activationfunction)(float *,float *,int);
 void (*dActivationFunction)(float *,float *,int);
 #define inputDimension 784
 #define outputDimension 10
-#define numberofHiddenUnits 700
+#define numberofHiddenUnits 20
 double hiddenWeights[numberofHiddenUnits][inputDimension];
 double outputWeights[outputDimension][numberofHiddenUnits];
 
